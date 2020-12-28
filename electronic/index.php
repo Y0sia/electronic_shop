@@ -15,43 +15,92 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
-
+	<div class="brand-logo-area carosel-navigation">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="area-title">
+								<h3 class="title-group border-red gfont-1">Brand Logo</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="active-brand-logo">
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 57 ) ?>" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 58 ) ?>" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 59 ) ?>" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 60 ) ?>" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 61 ) ?>" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 62 ) ?>" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 57 ) ?>" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 58 ) ?>" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="<?php echo wp_get_attachment_image_url( 59 ) ?>" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="subscribe-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-sm-7 col-xs-12">
+							<label class="hidden-sm hidden-xs">Sign Up for Our Newsletter:</label>
+							<div class="subscribe">
+								<form action="#">
+									<input type="text" placeholder="Enter Your E-mail">
+									<button type="submit">Subscribe</button>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-5 col-xs-12">
+							<div class="social-media">
+								<a href="#"><i class="fa fa-facebook fb"></i></a>
+								<a href="#"><i class="fa fa-google-plus gp"></i></a>
+								<a href="#"><i class="fa fa-twitter tt"></i></a>
+								<a href="#"><i class="fa fa-youtube yt"></i></a>
+								<a href="#"><i class="fa fa-linkedin li"></i></a>
+								<a href="#"><i class="fa fa-rss rs"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<!-- END SUBSCRIBE-AREA -->
+		</section>
 <?php
-get_sidebar();
 get_footer();

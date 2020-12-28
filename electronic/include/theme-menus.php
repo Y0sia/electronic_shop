@@ -7,7 +7,9 @@ add_action( 'after_setup_theme', 'theme_register_nav_menu' );
 function theme_register_nav_menu() {
 	register_nav_menu( 'top', 'Верхнее меню' );
 	register_nav_menu( 'main', 'Главное меню' );
-	register_nav_menu( 'category', 'Категории' );
+	register_nav_menu( 'my_account_footer', 'Мой аккаунт подвал' );
+	register_nav_menu( 'customer_service_footer', 'Обслуживание клиентов подвал' );
+	register_nav_menu( 'payment_shipping_footer_1', 'Оплата-доставка подвал #1' );
 }
 
 class Walker_Nav_Menu_Top extends Walker_Nav_Menu {
