@@ -122,25 +122,7 @@
 		                    <div class="quick-access">
 		                    	<div class="search-by-category">
 		                    		<div class="search-container">
-			                    		<select>
-			                    			<option class="all-cate">All Categories</option>
-											<optgroup  class="cate-item-head" label="Cameras & Photography">
-												<option class="cate-item-title">Handbags</option>
-												<option class="c-item">Blouses And Shirts</option>
-												<option class="c-item">Clouthes</option>
-											</optgroup>
-											<optgroup  class="cate-item-head" label="Laptop & Computer">
-												<option class="cate-item-title">Apple</option>
-												<option class="c-item">Dell</option>
-												<option class="c-item">Hp</option>
-												<option class="c-item">Sony</option>
-											</optgroup>
-											<optgroup  class="cate-item-head" label="Electronic">
-												<option class="c-item">Mobile</option>
-												<option class="c-item">Speaker</option>
-												<option class="c-item">Headphone</option>
-											</optgroup>
-			                    		</select>
+			                    		<?php category_search() ?>
 		                    		</div>
 		                    		<div class="header-search">
 		                    			<form action="#">

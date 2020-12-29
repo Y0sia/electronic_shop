@@ -13,5 +13,6 @@ require get_template_directory() . '/include/custom-slider.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/woocommerce/include/wc-function.php';
+	require get_template_directory() . '/woocommerce/include/wc-categories.php';
 	require get_template_directory() . '/include/woocommerce.php';
 }
