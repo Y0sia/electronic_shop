@@ -38,40 +38,64 @@ function category_mega_menu() {
 			'pad_counts'=> true,
 			'orderby' => 'name',
 			'parent' => 0
-		) ); 
-		$counter = 0; ?>
+		) ); ?>
 		   <div class="left-category-menu hidden-sm hidden-xs">
 		   	<div class="left-product-cat">
+		   		<div class="category-heading">
+	                <h2>categories</h2>
+	             </div>
+	             <div class="category-menu-list">
+	             	<ul>
 	         <?php foreach($terms as $term) { 
 							$tax = $term->taxonomy;
 							$children_terms = get_terms( array(
 							'taxonomy' => $tax,
 							'hide_empty' => false,
 							'parent' => $term->term_id
-						) ); 
-								if($counter == 0) { ?>
-	                            <div class="category-heading">
-	                                <h2>categories</h2>
-	                            </div>
-	                            <?php $counter = 1; ?>
-							<?php } ?>
-									<div class="category-menu-list">
-	                           <ul>
-	                           	<li class="arrow-plus">
-	                           		<a href="shop.html"><?php echo $term->name ?></a>
-	                           		<?php if($children_terms) { ?>
-						 									<div class="cat-left-drop-menu">
-						 										<div class="cat-left-drop-menu-left">
-						 											<?php foreach ($children_terms as $children_term) { ?>
-						 											<a class="menu-item-heading" href="#"><?php echo $children_term->name ?></a>
-						 										<?php } ?>
-						 										</div>
-						 									</div>
+						) );
+						$image = woocommerce_category_image($term->term_id); ?>
+	                           <li class="arrow-plus">
+	                           	<a href="shop.html"><?php echo $term->name ?></a>
+	                           	<?php if($children_terms) { ?>
+	                           		<? if(!$image) { ?>
+						 							<div class="cat-left-drop-menu">
+						 							<?php }
+						 								else { ?>
+						 										<div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
 						 								<?php } ?>
-	                           	</li>
-	                           </ul>
-	                        </div>
+						 								<?php foreach ($children_terms as $children_term) { ?>
+						 									<div class="cat-left-drop-menu-left">
+						 										<a class="menu-item-heading" href="#"><?php echo $children_term->name ?></a>
+						 									
+						 									<?php 
+						 											$children_tax = $children_term->taxonomy;
+																	$children_children_terms = get_terms( array(
+																	'taxonomy' => $children_tax,
+																	'hide_empty' => false,
+																	'parent' => $children_term->term_id
+																) ); 
+																if($children_children_terms) {
+																	foreach($children_children_terms as $children_children_term) {
+																		?> <ul>
+																				<li>
+																					<a href="#"><?php echo $children_children_term->name ?></a>
+																				</li>
+																			</ul>
+																	<?php	}
+																	} ?>
+																</div>
+						 									<?php } ?>
+						 									<?php if($image) { ?>
+						 											<div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
+						 												<a><img src="<?php echo $image ?>"></a>
+						 											</div>
+						 									<?php } ?>
+						 							</div>
+						 						<?php } ?>
+	                           </li>
 							<?php } ?>
+							</ul>
+						</div>
 				</div>
 			</div>
 			<?php
