@@ -10,6 +10,7 @@ require get_template_directory() . '/include/fonts.php';
 require get_template_directory() . '/include/helpers.php';
 require get_template_directory() . '/include/theme-menus.php';
 require get_template_directory() . '/include/custom-slider.php';
+require get_template_directory() . '/include/left-sidebar.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/woocommerce/include/wc-function.php';
