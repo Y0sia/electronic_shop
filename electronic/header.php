@@ -125,10 +125,11 @@
 			                    		<?php category_search() ?>
 		                    		</div>
 		                    		<div class="header-search">
-		                    			<form action="#">
-			                    			<input type="text" placeholder="Search">
+		                    			<form action="<?php esc_url( home_url( '/' ) ); ?>">
+			                    			<input type="text" placeholder="Search" value="<?php get_search_query() ?>" name="s">
 			                    			<button type="submit"><i class="fa fa-search"></i></button>
 		                    			</form>
+		                    			<div class="header-result"></div>
 		                    		</div>
 		                    	</div>
 		                    	<div class="top-cart">

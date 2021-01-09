@@ -19,5 +19,6 @@ require get_template_directory() . '/include/theme-menus.php';
 require get_template_directory() . '/include/custom-slider.php';
 require get_template_directory() . '/include/left-sidebar.php';
 require get_template_directory() . '/include/product-area.php';
+require get_template_directory() . '/include/ajax.php';
 
 
