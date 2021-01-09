@@ -135,54 +135,46 @@
 		                    	<div class="top-cart">
 		                    		<ul>
 		                    			<li>
-			                    			<a href="cart.html">
+			                    			<a href="<?php echo WC()->cart->get_cart_url() ?>">
 			                    				<span class="cart-icon"><i class="fa fa-shopping-cart"></i></span>
 			                    				<span class="cart-total">
 			                    					<span class="cart-title">shopping cart</span>
-				                    				<span class="cart-item">2 item(s)- </span>
-				                    				<span class="top-cart-price">$365.00</span>
+				                    				<span class="cart-item"><?php echo WC()->cart->cart_contents_count ?> item(s)- </span>
+				                    				<span class="top-cart-price">$<?php echo total_price() ?></span>
 			                    				</span>
 			                    			</a>
 											<div class="mini-cart-content">
+						<?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+													$product = wc_get_product($cart_item['product_id']);
+													$quantity = $cart_item['quantity'];
+													//get_pr($cart_item['product_id'], false);
+													//get_pr($product->sku, false); ?>
+
 												<div class="cart-img-details">
 													<div class="cart-img-photo">
-														<a href="#"><img src="img/product/total-cart.jpg" alt="#"></a>
+												<a href="#"><?php echo get_the_post_thumbnail($cart_item['product_id']) ?></a>
 													</div>
 													<div class="cart-img-content">
-														<a href="#"><h4>Prod Aldults</h4></a>
+														<a href="<?php echo $product->permalink ?>"><h4><?php echo $product->name ?></h4></a>
 														<span>
-															<strong class="text-right">1 x</strong>
-															<strong class="cart-price text-right">$180.00</strong>
+															<strong class="text-right"><?php echo $quantity?> x</strong>
+															<strong class="cart-price text-right">$<?php echo $product->price?></strong>
 														</span>
 													</div>
 													<div class="pro-del">
-														<a href="#"><i class="fa fa-times"></i></a>
+														<a href="<?php echo wc_get_cart_remove_url( $cart_item_key ) ?>" data-product_id="<?php echo $cart_item['product_id']?>" data-cart_item_key="<?php echo $cart_item_key ?>" data-product_sku="<?php echo $product->sku ?>"><i class="fa fa-times"></i></a>
 													</div>
 												</div>
+									<?php }?>
 												<div class="clear"></div>
-												<div class="cart-img-details">
-													<div class="cart-img-photo">
-														<a href="#"><img src="img/product/total-cart2.jpg" alt="#"></a>
-													</div>
-													<div class="cart-img-content">
-														<a href="#"><h4>Fact Prone</h4></a>
-														<span>
-															<strong class="text-right">1 x</strong>
-															<strong class="cart-price text-right">$185.00</strong>
-														</span>
-													</div>
-													<div class="pro-del">
-														<a href="#"><i class="fa fa-times"></i></a>
-													</div>
-												</div>
 												<div class="cart-inner-bottom">
 													<span class="total">
 														Total:
-														<span class="amount">$550.00</span>
+														<span class="amount">$<?php echo total_price() ?></span>
 													</span>
 													<span class="cart-button-top">
-														<a href="cart.html">View Cart</a>
-														<a href="checkout.html">Checkout</a>
+														<a href="<?php echo WC()->cart->get_cart_url() ?>">View Cart</a>
+														<a href="<?php echo WC()->cart->get_checkout_url() ?>">Checkout</a>
 													</span>
 												</div>
 											</div>
