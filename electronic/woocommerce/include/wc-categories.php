@@ -42,24 +42,25 @@ function category_search() {
 	'orderby' => 'name',
 	'parent' => 0
 ) ); 
-	?><select>
-		<option class="all-cate">All Categories</option>
-		<?php foreach($terms as $term) { 
-			$tax = $term->taxonomy;
-			$children_terms = get_terms( array(
-			'taxonomy' => $tax,
-			'hide_empty' => false,
-			'parent' => $term->term_id
-		) ); ?>
-				<optgroup  class="cate-item-head" label="<?php echo $term->name;?>">
-			<?php if($children_terms){ 
-						 foreach ($children_terms as $children_term) { ?>
-								<option class="c-item"><?php echo $children_term->name;?></option>
-				<?php	}
-					} ?>
-			</optgroup>
-			<?php } ?>
-		</select><?php
+	?>
+		<select name="product_cat" id="product_cat">
+			<option class="all-cate" value="0">All Categories</option>
+			<?php foreach($terms as $term) { 
+				$tax = $term->taxonomy;
+				$children_terms = get_terms( array(
+				'taxonomy' => $tax,
+				'hide_empty' => false,
+				'parent' => $term->term_id
+			) ); ?>
+					<optgroup  class="cate-item-head" label="<?php echo $term->name;?>">
+				<?php if($children_terms){ 
+							 foreach ($children_terms as $children_term) { ?>
+									<option class="c-item" value="<?php echo $children_term->slug;?>"><?php echo $children_term->name;?></option>
+					<?php	}
+						} ?>
+				</optgroup>
+				<?php } ?>
+			</select> <?php
 }
 function category_mega_menu() {
 		$terms = get_terms( array(

@@ -121,16 +121,16 @@
 						<div class="col-md-9 col-sm-12">
 		                    <div class="quick-access">
 		                    	<div class="search-by-category">
-		                    		<div class="search-container">
-			                    		<?php category_search() ?>
-		                    		</div>
+		                    		<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+			                    		<div class="search-container">
+				                    		<?php category_search() ?>
+			                    		</div>
 		                    		<div class="header-search">
-		                    			<form action="<?php esc_url( home_url( '/' ) ); ?>">
 			                    			<input type="text" placeholder="Search" value="<?php get_search_query() ?>" name="s">
 			                    			<button type="submit"><i class="fa fa-search"></i></button>
-		                    			</form>
 		                    			<div class="header-result"></div>
 		                    		</div>
+		                    	</form>
 		                    	</div>
 		                    	<div class="top-cart">
 		                    		<ul>
