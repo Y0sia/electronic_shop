@@ -3,6 +3,36 @@ if ( !defined('ABSPATH') ) {
 	exit;
 }
 
+
+function woocommerce_category($name) {
+	$categories = array();
+	$counter = 0;
+	$terms = get_terms( array(
+	'taxonomy' => 'product_cat',
+	'hide_empty' => true,
+	'pad_counts'=> true,
+	'orderby' => 'name',
+	'parent' => 0
+) ); 
+	foreach( $terms as $term ){
+		if($term->name == $name) {
+			$tax = $term->taxonomy;
+			$children_terms = get_terms( array(
+			'taxonomy' => $tax,
+			'hide_empty' => false,
+			'parent' => $term->term_id
+		) );
+			if($children_terms){ 
+						foreach ($children_terms as $children_term) {
+							$categories[$counter] = $children_term->name;
+							$counter++;
+				}
+			}
+		}
+	}
+	return $categories;
+}
+
 function category_search() {
 	
 	$terms = get_terms( array(

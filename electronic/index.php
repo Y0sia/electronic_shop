@@ -35,8 +35,10 @@ get_header();
 	<div class="row">
 		<div class="col-md-3 col-sm-3">
 			 <!-- START HOT-DEALS-AREA -->
-	            <?php hot_deals_area() ?>
+	            
 	        <!-- END HOT-DEALS-AREA -->
+	        <?php left_banners() ?>
+	        <?php left_posts() ?>
 		</div>
 		<div class="col-md-9 col-sm-9">
 			<div class="product-banner home1-banner">
@@ -60,7 +62,37 @@ get_header();
 										</div>
 									</div>
 								</div>
+			<?php product_area("Clothing") ?>
+			<?php product_area("Decor", "border-red") ?>
+			<?php product_area("Music") ?>
+		</div>
+				<!-- START PRODUCT-BANNER -->
+						<div class="product-banner">
+							<div class="row">
+								<div class="col-md-7 banner-box1">
+									<div class="single-product-banner">
+										<a href="#"><img src="<?php echo wp_get_attachment_image_url(137, 'full') ?>" alt="Product Banner"></a>
+										<div class="banner-text banner-1">
+											<h2>ApBle 4s</h2>
+											<p>Vibrant colors beautifully designed</p>
+											<span>$888.66</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-5 banner-box2">
+									<div class="single-product-banner">
+										<a href="#"><img src="<?php echo wp_get_attachment_image_url(135, 'full') ?>" alt="Product Banner"></a>
+										<div class="banner-text banner-2">
+											<h2>Htc <span>N8.</span></h2>
+											<p>lumina n85</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
+						<!-- END PRODUCT-BANNER -->
+		</div>
+		</div>
 		<div class="brand-logo-area carosel-navigation">
 					<div class="container">
 						<div class="row">
@@ -147,8 +179,6 @@ get_header();
 					</div>
 				</div>	
 			<!-- END SUBSCRIBE-AREA -->
-		</div>
-</div>
 </section>
 <?php
 get_footer();

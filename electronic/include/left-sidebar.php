@@ -57,3 +57,92 @@ function hot_deals_area() { ?>
 	         </div>
 	     </div>
 <?php }
+
+function small_product_area() { ?>
+							<div class="small-product-area carosel-navigation">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="area-title">
+										<h3 class="title-group gfont-1">Bestseller</h3>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="active-bestseller sidebar">
+									<div class="col-xs-12">
+										<!-- Start Single-Product -->
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-img" src="img/product/small/1.jpg" alt="Product">
+												</a>
+											</div>
+											<div class="product-description">
+												<h5><a href="#">Various Versions</a></h5>
+												<div class="price-box">
+													<span class="price">$99.00</span>
+													<span class="old-price">$120.00</span>
+												</div>
+												<span class="rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star-o"></i>
+												</span>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-xs-12">
+
+									</div>
+								</div>
+							</div>
+						</div>
+<?php }
+function left_banners() { ?>
+			        	<div class="sidebar-banner">
+	                    	<div class="active-sidebar-banner">
+	                    		<div class="single-sidebar-banner">
+	                    			<a href="#"><img src="<?php echo wp_get_attachment_image_url(128, 'full') ?>" alt="Product Banner"></a>
+	                    		</div>
+	                    		<div class="single-sidebar-banner">
+	                    			<a href="#"><img src="<?php echo wp_get_attachment_image_url(127, 'full') ?>" alt="Product Banner"></a>
+	                    		</div>
+	                    	</div>
+	                    </div>
+<?php }
+function left_posts() {?>
+		        		<div class="shop-blog-area sidebar">
+	                    	<div class="row">
+	                    		<div class="col-md-12">
+	                    			<h3 class="title-group border-red gfont-1">RECENT POSTS </h3>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row">
+		                    	<div class="active-recent-posts carosel-circle">
+		                    		<?php if ( have_posts() ){
+		                    			$counter = 0;
+												while ( have_posts() && $counter < 4){
+													$counter++;
+													the_post(); ?>
+													<div class="col-xs-12">
+			                    		<div class="single-recent-posts">
+			                    			<div class="recent-posts-photo">
+			                    				<?php echo get_the_post_thumbnail(get_the_ID()); ?>
+			                    			</div>
+			                    			<div class="recent-posts-text">
+			                    				<h5><a href="<?php the_permalink(); ?>" class="recent-posts-title"><?php the_title(); ?></a></h5>
+			                    				<span class="recent-posts-date"><?php the_date() ?> | <?php the_author() ?></span>
+			                    				<p class="posts-short-brif"><?php echo wp_trim_words( get_the_content(), 20, '...' );?></p>
+			                    				<a href="<?php the_permalink(); ?>" class="posts-read-more">Read more ...</a>
+			                    			</div>
+			                    		</div>
+		                    		</div>
+		                    			<?php }
+		                    		} ?>
+		                    	</div>
+	                    	</div>
+	                    </div>
+<?php }
