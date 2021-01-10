@@ -5,6 +5,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/woocommerce/include/wc-categories.php';
 	require get_template_directory() . '/woocommerce/include/wc-simple-add-to-cart.php';
 	require get_template_directory() . '/woocommerce/include/wc-function-cart.php';
+	require get_template_directory() . '/woocommerce/include/wc-checkout-function.php';
 	require get_template_directory() . '/include/woocommerce.php';
 	require get_template_directory() . '/woocommerce/include/wc-remove.php';
 }

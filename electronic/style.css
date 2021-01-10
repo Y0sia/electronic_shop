@@ -2871,5 +2871,12 @@ blockquote {
   position: relative;
   z-index: 10;
 }
+.woocommerce-form-coupon-toggle {
+  display: none;
+}
+.woocommerce-message {
+  display: none;
+}
+
 
 
