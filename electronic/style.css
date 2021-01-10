@@ -2877,6 +2877,11 @@ blockquote {
 .woocommerce-message {
   display: none;
 }
+.account_navigation_li {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
 
 
