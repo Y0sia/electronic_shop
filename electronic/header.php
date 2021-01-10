@@ -8,7 +8,6 @@
 		<?php wp_head(); ?>
     </head>
     <body>
-
 		<!-- HEADER-AREA START -->
 		<header class="header-area">
 			<!-- HEADER-TOP START -->
@@ -189,7 +188,7 @@
 			</div>
 			<!-- HEADER-MIDDLE END -->
 			<!-- START MAINMENU-AREA -->
-			<div class="mainmenu-area">
+			<div class="mainmenu-area <?php if(!is_front_page()) echo 'shop-page'; ?>">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
