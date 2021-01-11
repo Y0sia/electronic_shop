@@ -1184,6 +1184,19 @@ span.price {
   font-weight: 700;
   margin-right: 5px;
 }
+ins span {
+  color: #e95668;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  
+}
+del span {
+  color: #ccc;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
 span.old-price {
   color: #ccc;
   font-size: 15px;
@@ -1472,6 +1485,16 @@ a.posts-read-more:hover {
 	text-transform: uppercase;
 	transition: all 0.5s ease 0s;
 	width: 144px;
+  height: 36px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.product-button button i{
+  margin-left: 13px;
+}
+.product-button button a{
+  color: #fff;
 }
 .product-button button:hover {
   background: #e95668 none repeat scroll 0 0;
@@ -2895,6 +2918,9 @@ blockquote {
     padding: 6px 12px;
     position: relative;
     text-decoration: none;
+}
+.product-description h5 {
+  margin-top: 20px;
 }
 
 

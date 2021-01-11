@@ -52,9 +52,11 @@ function category_search() {
 				'hide_empty' => false,
 				'parent' => $term->term_id
 			) ); ?>
+
 					<optgroup  class="cate-item-head" label="<?php echo $term->name;?>">
 				<?php if($children_terms){ 
-							 foreach ($children_terms as $children_term) { ?>
+							 foreach ($children_terms as $children_term) { 
+							 	?>
 									<option class="c-item" value="<?php echo $children_term->slug;?>"><?php echo $children_term->name;?></option>
 					<?php	}
 						} ?>
@@ -84,9 +86,10 @@ function category_mega_menu() {
 							'hide_empty' => false,
 							'parent' => $term->term_id
 						) );
+							$cat_link = get_category_link( $term->term_id );
 						$image = woocommerce_category_image($term->term_id); ?>
 	                           <li class="arrow-plus">
-	                           	<a href="shop.html"><?php echo $term->name ?></a>
+	                           	<a href="<?php echo $cat_link ?>"><?php echo $term->name ?></a>
 	                           	<?php if($children_terms) { ?>
 	                           		<? if(!$image) { ?>
 						 							<div class="cat-left-drop-menu">
@@ -94,9 +97,10 @@ function category_mega_menu() {
 						 								else { ?>
 						 										<div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
 						 								<?php } ?>
-						 								<?php foreach ($children_terms as $children_term) { ?>
+						 								<?php foreach ($children_terms as $children_term) { 
+						 				$cat_link = get_category_link( $children_term->term_id );?>
 						 									<div class="cat-left-drop-menu-left">
-						 										<a class="menu-item-heading" href="#"><?php echo $children_term->name ?></a>
+						 										<a class="menu-item-heading" href="<?php echo $cat_link ?>"><?php echo $children_term->name ?></a>
 						 									
 						 									<?php 
 						 											$children_tax = $children_term->taxonomy;
@@ -107,9 +111,10 @@ function category_mega_menu() {
 																) ); 
 																if($children_children_terms) {
 																	foreach($children_children_terms as $children_children_term) {
+										$cat_link = get_category_link( $children_term->term_id );
 																		?> <ul>
 																				<li>
-																					<a href="#"><?php echo $children_children_term->name ?></a>
+																					<a href="<?php echo $cat_link ?>"><?php echo $children_children_term->name ?></a>
 																				</li>
 																			</ul>
 																	<?php	}

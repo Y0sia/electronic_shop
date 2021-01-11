@@ -161,9 +161,15 @@ function woocommerce_catalog_ordering_end() { ?>
 		</div>
 	</div>
 <?php }
-add_filter('woocommerce_show_page_title', 'remove_h1');
-function remove_h1($bool) {
-	$bool = false;
+add_filter('woocommerce_show_page_title', 'category_title');
+function category_title($bool) {
+	if(is_shop() || is_product_taxonomy()) {
+		$url = $_SERVER['REQUEST_URI'];
+		$bool = $url;
+	} else {
+		$bool = false;
+	}
+	
 	return $bool;
 }
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
