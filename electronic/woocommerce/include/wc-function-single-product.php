@@ -95,7 +95,7 @@ $average      = $product->get_average_rating(); ?>
 
 
 	<div>
-		<?php echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
+		<?php echo '<div class="star-rating" role="img" aria-label="' . esc_attr( $label ) . '">' . wc_get_star_rating_html( $rating, $count ) . '</div>'; ?>
 		<?php if ( comments_open() ) : ?>
 			<?php //phpcs:disable ?>
 			<div class="electronic_review">

@@ -47,7 +47,8 @@ function electronic_style() {
 	wp_enqueue_style('JQuery', get_template_directory_uri() . '/assets/css/jquery-ui.css');
 	wp_enqueue_style('animate', get_template_directory_uri() . '/assets/css/animate.css');
 	wp_enqueue_style('Main', get_template_directory_uri() . '/assets/css/main.css');
-	wp_enqueue_style('responsive', get_template_directory_uri() . '/assets/css/responsive.css');
+	
 	wp_enqueue_style( 'electronic-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style('responsive', get_template_directory_uri() . '/assets/css/responsive.css');
 }
 

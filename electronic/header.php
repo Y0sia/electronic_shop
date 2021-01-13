@@ -179,5 +179,21 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="mobile-menu-area hidden-md hidden-lg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<?php	wp_nav_menu( [
+									'theme_location'  => 'main',
+									'menu'            => 'Главное меню', 
+									'container'       => 'nav',
+									'container_id'    => 'mobile-menu',
+									'walker'				=> new Walker_Nav_Menu_Main(), 
+								] ); ?>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- End Mobile-menu -->
 		</header>

@@ -1780,7 +1780,7 @@ ul.footer-content.box-information li a {
   float: right;
 }
 #scrollUp {
-  background: #e95668 url("img/icon/back-top.png") no-repeat scroll 0 0;
+  /*background: #e95668 url("img/icon/back-top.png") no-repeat scroll 0 0;*/
   bottom: 35px;
   height: 54px;
   right: 20px;
@@ -1789,7 +1789,7 @@ ul.footer-content.box-information li a {
   width: 54px;
 }
 #scrollUp:hover {
-  background: #26acce url("img/icon/back-top.png") no-repeat scroll 0 -56px;
+  /*background: #26acce url("img/icon/back-top.png") no-repeat scroll 0 -56px;*/
 }
 /*=========================== 
  15. Product Modal
@@ -2946,6 +2946,10 @@ blockquote {
     float: left;
     margin-right: 10%;
     padding: 12px 0;
+    width: 100%;
+}
+.variations {
+  width: 100%;
 }
 .variations .value select{
       background-color: #fff;
@@ -3019,4 +3023,18 @@ ol {
 }
 .wpcf7-form-control.wpcf7-textarea {
   height: auto;
+}
+
+.map-area{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-area iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
