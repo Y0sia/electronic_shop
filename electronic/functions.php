@@ -4,9 +4,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/woocommerce/include/wc-function.php';
 	require get_template_directory() . '/woocommerce/include/wc-categories.php';
 	require get_template_directory() . '/woocommerce/include/wc-simple-add-to-cart.php';
+	require get_template_directory() . '/woocommerce/include/wc-function-cart.php';
+	require get_template_directory() . '/woocommerce/include/wc-checkout-function.php';
+	require get_template_directory() . '/woocommerce/include/wc-archive-product-function.php';
+	require get_template_directory() . '/woocommerce/include/wc-function-single-product.php';
+	require get_template_directory() . '/woocommerce/include/wc-function-content-product.php';
 	require get_template_directory() . '/include/woocommerce.php';
+	require get_template_directory() . '/woocommerce/include/wc-remove.php';
 }
-
 require get_template_directory() . '/include/custom-header.php';
 require get_template_directory() . '/include/template-tags.php';
 require get_template_directory() . '/include/template-functions.php';
@@ -20,5 +25,6 @@ require get_template_directory() . '/include/custom-slider.php';
 require get_template_directory() . '/include/left-sidebar.php';
 require get_template_directory() . '/include/product-area.php';
 require get_template_directory() . '/include/ajax.php';
+require get_template_directory() . '/include/breadcrumbs.php';
 
 

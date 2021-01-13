@@ -8,7 +8,6 @@
 		<?php wp_head(); ?>
     </head>
     <body>
-
 		<!-- HEADER-AREA START -->
 		<header class="header-area">
 			<!-- HEADER-TOP START -->
@@ -17,29 +16,7 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="top-menu">
-								<!-- Start Language -->
-								<ul class="language">
-									<li><a href="#"><img class="right-5" src="img/flags/gb.png" alt="#">English<i class="fa fa-caret-down left-5"></i></a>
-										<ul>
-											<li><a href="#"><img class="right-5" src="img/flags/fr.png" alt="#">French</a></li>
-											<li><a href="#"><img class="right-5" src="img/flags/gb.png" alt="#">English</a></li>
-											<li><a href="#"><img class="right-5" src="img/flags/gb.png" alt="#">English</a></li>
-										</ul>
-									</li>
-								</ul>
-								<!-- End Language -->
-								<!-- Start Currency -->
-								<ul class="currency">
-									<li><a href="#"><strong>$</strong> USD<i class="fa fa-caret-down left-5"></i></a>
-										<ul>
-											<li><a href="#">$ EUR</a></li>
-											<li><a href="#">$ GBP</a></li>
-											<li><a href="#">$ USD</a></li>
-										</ul>
-									</li>
-								</ul>
-								<!-- End Currency -->
-								<p class="welcome-msg">Default welcome msg!</p>
+								<p class="welcome-msg">Welcome!</p>
 							</div>
 							<!-- Start Top-Link -->
 						<?php	wp_nav_menu( [
@@ -121,68 +98,58 @@
 						<div class="col-md-9 col-sm-12">
 		                    <div class="quick-access">
 		                    	<div class="search-by-category">
-		                    		<div class="search-container">
-			                    		<?php category_search() ?>
-		                    		</div>
+		                    		<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+			                    		<div class="search-container">
+				                    		<?php category_search() ?>
+			                    		</div>
 		                    		<div class="header-search">
-		                    			<form action="<?php esc_url( home_url( '/' ) ); ?>">
 			                    			<input type="text" placeholder="Search" value="<?php get_search_query() ?>" name="s">
 			                    			<button type="submit"><i class="fa fa-search"></i></button>
-		                    			</form>
 		                    			<div class="header-result"></div>
 		                    		</div>
+		                    	</form>
 		                    	</div>
 		                    	<div class="top-cart">
 		                    		<ul>
 		                    			<li>
-			                    			<a href="cart.html">
+			                    			<a href="<?php echo WC()->cart->get_cart_url() ?>">
 			                    				<span class="cart-icon"><i class="fa fa-shopping-cart"></i></span>
 			                    				<span class="cart-total">
 			                    					<span class="cart-title">shopping cart</span>
-				                    				<span class="cart-item">2 item(s)- </span>
-				                    				<span class="top-cart-price">$365.00</span>
+				                    				<span class="cart-item"><?php echo WC()->cart->cart_contents_count ?> item(s)- </span>
+				                    				<span class="top-cart-price">$<?php echo total_price() ?></span>
 			                    				</span>
 			                    			</a>
 											<div class="mini-cart-content">
+						<?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+													$product = wc_get_product($cart_item['product_id']);
+													$quantity = $cart_item['quantity']; ?>
+
 												<div class="cart-img-details">
 													<div class="cart-img-photo">
-														<a href="#"><img src="img/product/total-cart.jpg" alt="#"></a>
+												<a href="<?php echo $product->get_permalink() ?>"><?php echo get_the_post_thumbnail($cart_item['product_id']) ?></a>
 													</div>
 													<div class="cart-img-content">
-														<a href="#"><h4>Prod Aldults</h4></a>
+														<a href="<?php echo $product->get_permalink() ?>"><h4><?php echo $product->name ?></h4></a>
 														<span>
-															<strong class="text-right">1 x</strong>
-															<strong class="cart-price text-right">$180.00</strong>
+															<strong class="text-right"><?php echo $quantity?> x</strong>
+															<strong class="cart-price text-right">$<?php echo $product->price?></strong>
 														</span>
 													</div>
 													<div class="pro-del">
-														<a href="#"><i class="fa fa-times"></i></a>
+														<a href="<?php echo wc_get_cart_remove_url( $cart_item_key ) ?>" data-product_id="<?php echo $cart_item['product_id']?>" data-cart_item_key="<?php echo $cart_item_key ?>" data-product_sku="<?php echo $product->sku ?>"><i class="fa fa-times"></i></a>
 													</div>
 												</div>
+									<?php }?>
 												<div class="clear"></div>
-												<div class="cart-img-details">
-													<div class="cart-img-photo">
-														<a href="#"><img src="img/product/total-cart2.jpg" alt="#"></a>
-													</div>
-													<div class="cart-img-content">
-														<a href="#"><h4>Fact Prone</h4></a>
-														<span>
-															<strong class="text-right">1 x</strong>
-															<strong class="cart-price text-right">$185.00</strong>
-														</span>
-													</div>
-													<div class="pro-del">
-														<a href="#"><i class="fa fa-times"></i></a>
-													</div>
-												</div>
 												<div class="cart-inner-bottom">
 													<span class="total">
 														Total:
-														<span class="amount">$550.00</span>
+														<span class="amount">$<?php echo total_price() ?></span>
 													</span>
 													<span class="cart-button-top">
-														<a href="cart.html">View Cart</a>
-														<a href="checkout.html">Checkout</a>
+														<a href="<?php echo WC()->cart->get_cart_url() ?>">View Cart</a>
+														<a href="<?php echo WC()->cart->get_checkout_url() ?>">Checkout</a>
 													</span>
 												</div>
 											</div>
@@ -197,7 +164,7 @@
 			</div>
 			<!-- HEADER-MIDDLE END -->
 			<!-- START MAINMENU-AREA -->
-			<div class="mainmenu-area">
+			<div class="mainmenu-area <?php if(!is_front_page()) echo 'shop-page'; ?>">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">

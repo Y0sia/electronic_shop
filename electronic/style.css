@@ -1184,6 +1184,19 @@ span.price {
   font-weight: 700;
   margin-right: 5px;
 }
+ins span {
+  color: #e95668;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  
+}
+del span {
+  color: #ccc;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
 span.old-price {
   color: #ccc;
   font-size: 15px;
@@ -1472,6 +1485,16 @@ a.posts-read-more:hover {
 	text-transform: uppercase;
 	transition: all 0.5s ease 0s;
 	width: 144px;
+  height: 36px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.product-button button i{
+  margin-left: 13px;
+}
+.product-button button a{
+  color: #fff;
 }
 .product-button button:hover {
   background: #e95668 none repeat scroll 0 0;
@@ -2271,7 +2294,7 @@ background: #EC4445;
 .sort > label, .limit > label {
   font-size: 14px;
 }
-.sort > select, .limit > select {
+.sort > form > select, .limit > select {
   border: 0 none;
   padding: 5px;
 }
@@ -2338,7 +2361,7 @@ background: #EC4445;
 .pagination ul li {
 	display: inline-block;
 }
-.pagination ul li a {
+.pagination ul li a{
 background-color: #fff;
 border: 1px solid #ddd;
 color: #e48080;
@@ -2349,7 +2372,7 @@ padding: 6px 12px;
 position: relative;
 text-decoration: none;
 }
-.pagination ul li.active a, .pagination ul li.active a:hover {
+.pagination ul li span.current, .pagination ul li span.current:hover {
 background-color: #e48080;
 border-color: #e48080;
 color: #fff;
@@ -2372,11 +2395,12 @@ z-index: 2;
 ==========================*/
 .toch-prond-menu {}
 .toch-prond-menu ul {}
-.toch-prond-menu ul li {
+.flex-control-thumbs li {
   border: 1px solid #ddd;
   display: inline-block;
   float: left;
   margin-right: 4%;
+  margin-top: 4%;
   padding: 5px;
   width: 22%;
   transition: all 0.3s ease 0s;
@@ -2409,7 +2433,9 @@ transition: border 0.2s ease-in-out 0s;
   padding: 12px 0;
   width: 45%;
 }
-.form-control {
+.form-control,
+.wpcf7-form-control.wpcf7-text,
+.wpcf7-form-control.wpcf7-textarea {
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -2501,7 +2527,8 @@ transition: border 0.2s ease-in-out 0s;
 .toch-menu ul {
   border-bottom: 0 none;
   float: left;
-  width: 17%;
+  margin-right: 10px;
+  /*width: 17%;*/
 }
 .toch-menu ul li a {
   background: #fff none repeat scroll 0 0;
@@ -2527,6 +2554,7 @@ transition: border 0.2s ease-in-out 0s;
   max-height: 300px;
   overflow-y: auto;
   padding: 20px 10px;
+  overflow-x: hidden;
 }
 .toch-description > p {
   color: #959595 !important;
@@ -2871,5 +2899,124 @@ blockquote {
   position: relative;
   z-index: 10;
 }
+.woocommerce-form-coupon-toggle {
+  display: none;
+}
+.woocommerce-message {
+  display: none;
+}
+.account_navigation_li {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.form-orderby {
+  display: inline-block;
+}
+.page-numbers {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #e48080;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+.product-description h5 {
+  margin-top: 20px;
+}
+.woocommerce-product-gallery__trigger {
+  display: none;
+}
+.electronic_review {
+  position: relative;
+  top: 2px;
+  left: 75px;
+}
+.about-toch-prond .star-rating {
+  position: absolute;
+}
+.about-toch-prond .price {
+  font-size: 30px;
+  color: #e95668;
+}
+.variations .value {
+    float: left;
+    margin-right: 10%;
+    padding: 12px 0;
+}
+.variations .value select{
+      background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 12px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.variations .label label {
+    font-size: 18px;
+    font-weight: normal;
+    color: #7E7E7E;
+}
+.quantity > label {
+  font-size: 18px;
+}
+.quantity > input {
+    border: 1px solid #ccc;
+    font-size: 18px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    width: 60px;
+}
+.woocommerce-variation-add-to-cart.single_add_to_cart_button,
+.summary.entry-summary .cart .single_add_to_cart_button {
+    background: #f1f1f1 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 0;
+    color: #999;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+    outline: 0 none;
+    padding: 0 15px 0 8px;
+    text-shadow: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    width: auto;
+    background: #26acce none repeat scroll 0 0; 
+    color: #fff;
+}
 
-
+.woocommerce-variation-add-to-cart .single_add_to_cart_button:hover,
+.summary.entry-summary .cart .single_add_to_cart_button:hover {
+  background: #E95668 none repeat scroll 0 0;
+}
+.product-form {
+  display: flex;
+}
+.additional_information_tab {
+  display: none;
+}
+.reviews_tab {
+  display: none;
+}
+ol {
+  padding-inline-start: 0px;
+}
+.contact-message label {
+  margin-top: 10px;
+}
+.wpcf7-form-control.wpcf7-textarea {
+  height: auto;
+}
