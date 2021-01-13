@@ -31,6 +31,7 @@ function electronic_script() {
 		'url' => admin_url( 'admin-ajax.php' ),
 		'nonce' => wp_create_nonce('search-nonce')
 	));
+	wp_enqueue_script('wc-functions', get_template_directory_uri() . '/assets/js/wc-functions.js');
 }
 
 add_action('wp_enqueue_scripts', 'electronic_style');

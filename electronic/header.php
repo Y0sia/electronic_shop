@@ -123,16 +123,14 @@
 											<div class="mini-cart-content">
 						<?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 													$product = wc_get_product($cart_item['product_id']);
-													$quantity = $cart_item['quantity'];
-													//get_pr($cart_item['product_id'], false);
-													//get_pr($product->sku, false); ?>
+													$quantity = $cart_item['quantity']; ?>
 
 												<div class="cart-img-details">
 													<div class="cart-img-photo">
-												<a href="#"><?php echo get_the_post_thumbnail($cart_item['product_id']) ?></a>
+												<a href="<?php echo $product->get_permalink() ?>"><?php echo get_the_post_thumbnail($cart_item['product_id']) ?></a>
 													</div>
 													<div class="cart-img-content">
-														<a href="<?php echo $product->permalink ?>"><h4><?php echo $product->name ?></h4></a>
+														<a href="<?php echo $product->get_permalink() ?>"><h4><?php echo $product->name ?></h4></a>
 														<span>
 															<strong class="text-right"><?php echo $quantity?> x</strong>
 															<strong class="cart-price text-right">$<?php echo $product->price?></strong>

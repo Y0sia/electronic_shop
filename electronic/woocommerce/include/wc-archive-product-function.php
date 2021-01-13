@@ -16,9 +16,13 @@ function electronic_output_content_wrapper_start(){ ?>
 			<div class="row">
 			<div class="col-md-3">
 					<?php category_mega_menu() ?>
+					<div class="shop-filter">
+						<?php the_widget('WC_Widget_Price_Filter') ?>
+					</div>
 			</div>
 			<div class="col-md-9">
 						<!-- START PRODUCT-BANNER -->
+						<?php if(!is_product()) { ?>
 						<div class="product-banner">
 							<div class="row">
 								<div class="col-xs-12">
@@ -30,28 +34,32 @@ function electronic_output_content_wrapper_start(){ ?>
 						</div>
 			<div class="product-area">
 				<div class="row">
-					
+		<?php } ?>
 					
 <?php }
 
 add_action('woocommerce_before_main_content', 'electronic_output_content_wrapper_end', 35);
 function electronic_output_content_wrapper_end() { ?>
+	<?php if(!is_product()) { ?>
 	<div class="col-xs-12">
 		<div class="product-menu">
 			<div class="product-title">
+		<?php } ?>
 <?php }
 
 add_action('woocommerce_before_shop_loop', 'electronic_output_all_notices', 5);
 function electronic_output_all_notices() { ?>
+	<?php if(!is_product()) { ?>
 		</div>
 	</div>
+	<?php } ?>
 	<div class="product-filter">
 <?php }
 
 add_action('woocommerce_before_shop_loop', 'electronic_before_shop_loop_start', 35);
 function electronic_before_shop_loop_start() { ?>
 		</div>
-	</div>
+	<?php if(!is_product()) echo '</div>'; ?>
 <?php }
 
 add_action('woocommerce_before_shop_loop', 'electronic_catalog_ordering_start', 25);
@@ -157,9 +165,10 @@ function woocommerce_output_content_wrapper_end_end() { ?>
 
 add_action('woocommerce_after_shop_loop', 'woocommerce_catalog_ordering_end', 5);
 function woocommerce_catalog_ordering_end() { ?>
-
+	<?php if(!is_product()) { ?>
 		</div>
 	</div>
+<?php } ?>
 <?php }
 add_filter('woocommerce_show_page_title', 'category_title');
 function category_title($bool) {

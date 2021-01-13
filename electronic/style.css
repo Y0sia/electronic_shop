@@ -2395,11 +2395,12 @@ z-index: 2;
 ==========================*/
 .toch-prond-menu {}
 .toch-prond-menu ul {}
-.toch-prond-menu ul li {
+.flex-control-thumbs li {
   border: 1px solid #ddd;
   display: inline-block;
   float: left;
   margin-right: 4%;
+  margin-top: 4%;
   padding: 5px;
   width: 22%;
   transition: all 0.3s ease 0s;
@@ -2524,7 +2525,8 @@ transition: border 0.2s ease-in-out 0s;
 .toch-menu ul {
   border-bottom: 0 none;
   float: left;
-  width: 17%;
+  margin-right: 10px;
+  /*width: 17%;*/
 }
 .toch-menu ul li a {
   background: #fff none repeat scroll 0 0;
@@ -2550,6 +2552,7 @@ transition: border 0.2s ease-in-out 0s;
   max-height: 300px;
   overflow-y: auto;
   padding: 20px 10px;
+  overflow-x: hidden;
 }
 .toch-description > p {
   color: #959595 !important;
@@ -2922,5 +2925,90 @@ blockquote {
 .product-description h5 {
   margin-top: 20px;
 }
+.woocommerce-product-gallery__trigger {
+  display: none;
+}
+.electronic_review {
+  position: relative;
+  top: 2px;
+  left: 75px;
+}
+.about-toch-prond .star-rating {
+  position: absolute;
+}
+.about-toch-prond .price {
+  font-size: 30px;
+  color: #e95668;
+}
+.variations .value {
+    float: left;
+    margin-right: 10%;
+    padding: 12px 0;
+}
+.variations .value select{
+      background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 12px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.variations .label label {
+    font-size: 18px;
+    font-weight: normal;
+    color: #7E7E7E;
+}
+.quantity > label {
+  font-size: 18px;
+}
+.quantity > input {
+    border: 1px solid #ccc;
+    font-size: 18px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    width: 60px;
+}
+.woocommerce-variation-add-to-cart.single_add_to_cart_button,
+.summary.entry-summary .cart .single_add_to_cart_button {
+    background: #f1f1f1 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 0;
+    color: #999;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+    outline: 0 none;
+    padding: 0 15px 0 8px;
+    text-shadow: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    width: auto;
+    background: #26acce none repeat scroll 0 0; 
+    color: #fff;
+}
 
-
+.woocommerce-variation-add-to-cart .single_add_to_cart_button:hover,
+.summary.entry-summary .cart .single_add_to_cart_button:hover {
+  background: #E95668 none repeat scroll 0 0;
+}
+.product-form {
+  display: flex;
+}
+.additional_information_tab {
+  display: none;
+}
+.reviews_tab {
+  display: none;
+}
+ol {
+  padding-inline-start: 0px;
+}
