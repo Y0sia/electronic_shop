@@ -179,8 +179,8 @@ class Walker_Nav_Menu_Main extends Walker_Nav_Menu {
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-		if($item->ID == 37) $class_names = ' class="hot"';
-		if($item->ID == 25) $class_names = ' class="new"';
+		if($item->ID == 147) $class_names = ' class="hot"';
+		if($item->ID == 146) $class_names = ' class="new"';
 
 		$output .= $indent . '<li' . $id . $class_names . '>';
 
