@@ -82,6 +82,9 @@ function product_area($title, $color = "") {
 																		<div class="product-button">
 																			<?php simple_button($product) ?>
 																		</div>
+																		<div class="product-button-2">
+																			<?php echo do_shortcode('[ti_wishlists_addtowishlist]'); ?>
+																		</div>
 																	</div>
 																</div>												
 															</div>

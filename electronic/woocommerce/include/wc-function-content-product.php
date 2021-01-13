@@ -80,6 +80,9 @@ add_action('woocommerce_after_shop_loop_item', 'electronic_template_loop_add_to_
 function electronic_template_loop_add_to_cart_end() { ?>
 				</button>
 			</div>
+			<div class="product-button-2">
+				<?php echo do_shortcode('[ti_wishlists_addtowishlist]'); ?>
+			</div>
 		</div>
 	</div>
 <?php }

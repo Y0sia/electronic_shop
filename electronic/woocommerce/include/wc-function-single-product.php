@@ -116,5 +116,6 @@ function electronic_before_add_to_cart() { ?>
 
 add_action('woocommerce_after_add_to_cart_button', 'electronic_after_add_to_cart');
 function electronic_after_add_to_cart() { ?>
+	<?php if(is_product()) echo do_shortcode('[ti_wishlists_addtowishlist]'); ?>
 	</div> 
 <?php }

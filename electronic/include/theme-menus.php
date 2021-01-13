@@ -89,9 +89,8 @@ class Walker_Nav_Menu_Top extends Walker_Nav_Menu {
 				$value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 
-
 				if(strripos($value, 'my-account')) $attributes_i .= 'user';
-				else if(strripos($value, 'whishlist')) $attributes_i .= 'heart';
+				else if(strripos($value, 'wishlist')) $attributes_i .= 'heart';
 				else if(strripos($value, 'checkout')) $attributes_i .= 'share';
 				else if(strripos($value, 'wp-login')) $attributes_i .= 'unlock-alt';
 			}
